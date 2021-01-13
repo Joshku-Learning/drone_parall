@@ -1,27 +1,49 @@
 kind: pipeline
 type: docker
-name: default
+name: pipeline-01
+
+clone:
+  disable: true
 
 steps:
-  - name: backend
+  - name: practice
     image: golang
     commands:
-      - sleep 5
-      - go build
-      - go test
+      - echo hello drone pipeline-01
 
-  - name: frontend
+---
+
+kind: pipeline
+type: docker
+name: pipeline-02
+
+clone:
+  disable: true
+
+steps:
+  - name: practice
     image: golang
     commands:
-      - sleep 5
-      - echo "test"
-  - name: build
-    image: plugins/slack
-    settings:
-      channel: general
-    depends_on:
-      - backend
-      - frontend
-## 載入 docker config 設定
-image_pull_secrets:
-  - dockerconfigjson
+      - echo hello drone pipeline-02
+
+depends_on:
+  - pipeline-01
+
+---
+
+kind: pipeline
+type: docker
+name: pipeline-03
+
+
+clone:
+  disable: true
+
+steps:
+  - name: practice
+    image: golang
+    commands:
+      - echo hello drone pipeline-03
+
+depends_on:
+  - pipeline-02
