@@ -22,7 +22,6 @@ steps:
     depends_on:
       - backend
       - frontend
-      -
 ## 載入 docker config 設定
 image_pull_secrets:
   - dockerconfigjson
