@@ -26,8 +26,6 @@ steps:
     commands:
       - echo hello drone pipeline-02
 
-depends_on:
-  - pipeline-01
 
 ---
 
@@ -45,5 +43,3 @@ steps:
     commands:
       - echo hello drone pipeline-03
 
-depends_on:
-  - pipeline-02
