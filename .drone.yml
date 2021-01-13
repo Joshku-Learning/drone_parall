@@ -6,15 +6,15 @@ steps:
   - name: backend
     image: golang
     commands:
+      - sleep 5
       - go build
       - go test
 
   - name: frontend
     image: golang
     commands:
-      - npm install
-      - npm test
-
+      - sleep 5
+      - echo "test"
   - name: build
     image: plugins/slack
     settings:
