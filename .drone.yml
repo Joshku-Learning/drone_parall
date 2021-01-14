@@ -51,7 +51,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: pipeline-03
+name: pipeline-04
 
 
 clone:
