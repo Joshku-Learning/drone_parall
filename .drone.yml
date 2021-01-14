@@ -30,7 +30,7 @@ steps:
       - echo hello drone pipeline-03
       - sleep 5
     depends_on:
-      - practice-1
+      - practice-2
 
 ---
 kind: pipeline
