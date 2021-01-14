@@ -28,7 +28,7 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-03
-      - sleep 5
+      - sleep 10
     depends_on:
       - practice-3
 
