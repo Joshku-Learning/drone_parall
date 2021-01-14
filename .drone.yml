@@ -12,7 +12,6 @@ steps:
       - echo hello drone pipeline-01
 
 ---
-
 kind: pipeline
 type: docker
 name: pipeline-02
@@ -25,12 +24,31 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-02
+      - sleep 7
 
 depends_on:
   - pipeline-01
 
 ---
+kind: pipeline
+type: docker
+name: pipeline-03
 
+
+clone:
+  disable: true
+
+steps:
+  - name: practice
+    image: golang
+    commands:
+      - echo hello drone pipeline-03
+      - sleep 5
+
+depends_on:
+  - pipeline-01
+
+---
 kind: pipeline
 type: docker
 name: pipeline-03
@@ -45,5 +63,4 @@ steps:
     commands:
       - echo hello drone pipeline-03
 
-depends_on:
-  - pipeline-01
+depends_on: [ pipeline-02 , pipeline-03 ]
