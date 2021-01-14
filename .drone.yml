@@ -31,8 +31,6 @@ steps:
       - sleep 5
     depends_on:
       - practice-1
-      - practice-2
-      - practice-3
 
 ---
 kind: pipeline
