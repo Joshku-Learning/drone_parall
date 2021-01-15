@@ -16,13 +16,13 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-02
-      - sleep 12
+      - sleep 2
 
   - name: practice-3
     image: golang
     commands:
       - echo hello drone pipeline-02
-      - sleep 15
+      - sleep 1
 
   - name: practice-4
     image: golang
