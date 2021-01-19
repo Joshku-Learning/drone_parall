@@ -63,6 +63,4 @@ steps:
     commands:
       - echo hello drone pipeline-05
 
-depends_on:
-  - pipeline-04
 
