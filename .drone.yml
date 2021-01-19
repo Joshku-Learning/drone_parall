@@ -49,3 +49,20 @@ steps:
 depends_on:
   - pipeline-01
 
+---
+kind: pipeline
+type: docker
+name: pipeline-05
+
+clone:
+  disable: true
+
+steps:
+  - name: practice
+    image: golang
+    commands:
+      - echo hello drone pipeline-05
+
+depends_on:
+  - pipeline-04
+
