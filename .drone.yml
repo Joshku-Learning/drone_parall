@@ -17,6 +17,13 @@ steps:
     commands:
       - echo hello drone pipeline-02
       - sleep 2
+  - name: parallel
+    image: golang
+    commands:
+      - echo hello drone pipeline-02
+    - depends_on:
+      - practice-1
+      - practice-2
 
 ---
 kind: pipeline
