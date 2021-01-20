@@ -82,5 +82,4 @@ depends_on:
   - pipeline-02
   - pipeline-03
   - pipeline-04
-  - pipeline-05
 
