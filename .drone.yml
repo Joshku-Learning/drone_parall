@@ -18,20 +18,6 @@ steps:
       - echo hello drone pipeline-02
       - sleep 1
 
-#  - name: practice-3
-#    image: golang
-#    commands:
-#      - echo hello drone pipeline-02
-#      - sleep 1
-#
-#  - name: practice-4
-#    image: golang
-#    commands:
-#      - echo hello drone pipeline-03
-#      - sleep 5
-#    depends_on:
-#      - practice-3
-
 ---
 kind: pipeline
 type: docker
@@ -76,19 +62,5 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-06
-#---
-#kind: pipeline
-#type: docker
-#name: pipeline-python-07
-#
-#clone:
-#  disable: true
-#
-#steps:
-#  - name: practice
-#    image: python
-#    commands:
-#      - pip install -r requirements.txt
-#      - pytest
 
 
