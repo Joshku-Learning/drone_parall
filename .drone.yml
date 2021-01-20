@@ -11,16 +11,18 @@ steps:
     commands:
       - echo hello drone pipeline-01
       - sleep 1
+
   - name: practice-2
     image: golang
     commands:
       - echo hello drone pipeline-02
       - sleep 2
 
+
 ---
 kind: pipeline
 type: docker
-name: pipeline-04
+name: pipeline-02
 
 clone:
   disable: true
@@ -37,7 +39,7 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: pipeline-05
+name: pipeline-03
 
 clone:
   disable: true
@@ -51,7 +53,7 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: pipeline-06
+name: pipeline-04
 
 clone:
   disable: true
@@ -65,7 +67,7 @@ steps:
 ---
 kind: pipeline
 type: docker
-name: after-parallel
+name: pipeline-05
 
 clone:
   disable: true
@@ -75,10 +77,10 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-06
-  depends_on:
-    - pipeline-01
-    - pipeline-04
-    - pipeline-05
-    - pipeline-06
-
+depends_on:
+  - pipeline-01
+  - pipeline-02
+  - pipeline-03
+  - pipeline-04
+  - pipeline-05
 
