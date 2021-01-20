@@ -76,5 +76,19 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-06
+---
+kind: pipeline
+type: docker
+name: pipeline-python-07
+
+clone:
+  disable: true
+
+steps:
+  - name: practice
+    image: python
+    commands:
+      - pip install -r requirements.txt
+      - pytest
 
 
