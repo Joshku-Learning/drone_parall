@@ -63,4 +63,18 @@ steps:
     commands:
       - echo hello drone pipeline-05
 
+---
+kind: pipeline
+type: docker
+name: pipeline-06
+
+clone:
+  disable: true
+
+steps:
+  - name: practice
+    image: golang
+    commands:
+      - echo hello drone pipeline-06
+
 
