@@ -18,6 +18,7 @@ steps:
       - echo hello drone pipeline-02
       - sleep 2
 
+
 ---
 kind: pipeline
 type: docker
@@ -31,8 +32,6 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-03
-    agent:
-      -runner-frontend
 
 #depends_on:
 #  - pipeline-01
@@ -50,8 +49,6 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-05
-    agent:
-      -runner-frontend
 
 ---
 kind: pipeline
@@ -66,8 +63,6 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-06
-    agent:
-      -runner-backend
 
 ---
 kind: pipeline
@@ -82,8 +77,6 @@ steps:
     image: golang
     commands:
       - echo hello drone pipeline-06
-    agent:
-      -runner-frontend
 depends_on:
   - pipeline-01
   - pipeline-02
